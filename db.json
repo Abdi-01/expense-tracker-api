@@ -1,0 +1,36 @@
+{
+    "expense": [
+        {
+            "id": 1,
+            "title": "Pasive income",
+            "type": "income",
+            "date": "2022-11-01",
+            "nominal": 2500000,
+            "note": ""
+        },
+        {
+            "id": 2,
+            "title": "Buy snack",
+            "type": "expense",
+            "date": "2022-11-15",
+            "nominal": 25000,
+            "note": ""
+        },
+        {
+            "id": 3,
+            "title": "Buy drink",
+            "type": "expense",
+            "date": "2022-11-20",
+            "nominal": 50000,
+            "note": "Kopi Kenangan"
+        },
+        {
+            "id": 4,
+            "title": "Salary",
+            "type": "income",
+            "date": "2022-11-25",
+            "nominal": 3000000,
+            "note": ""
+        }
+    ]
+}
