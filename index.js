@@ -13,4 +13,12 @@ const expenseRoute = require('./routers/expenseRouter');
 // Manage request for expense data
 app.use('/expense', expenseRoute);
 
+// DB Check Connection
+const { dbConf } = require('./config/db');
+dbConf.getConnection((error, connection) => {
+    if (error) {
+        console.log("Error MySQL Connection", error.sqlMessage);
+    }
+    console.log("Connect MySQL ✅", connection.threadId);
+});
 app.listen(PORT, () => console.log("Expense Tracker API RUNNING", PORT));

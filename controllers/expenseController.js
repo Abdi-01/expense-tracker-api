@@ -31,13 +31,13 @@ module.exports = {
             ...req.body
         });
         fs.writeFileSync('./db.json', JSON.stringify(data));
-    
+
         res.status(200).send({
             success: true,
             data: data.expense[data.expense.length - 1]
         })
     },
-    editData:(req, res) => {
+    editData: (req, res) => {
         let data = JSON.parse(fs.readFileSync('./db.json'));
         let getIdx = data.expense.findIndex((val) => val.id == req.params.id);
         if (getIdx >= 0) {
@@ -70,7 +70,7 @@ module.exports = {
             })
         }
     },
-    total:(req, res) => {
+    total: (req, res) => {
         let data = JSON.parse(fs.readFileSync('./db.json'));
         let amount = {
             income: 0,
@@ -94,7 +94,7 @@ module.exports = {
                 } else if (key.includes('date')) {
                     let start = new Date(req.query['date.start']).getTime();
                     let end = new Date(req.query['date.end']).getTime();
-    
+
                     amount = {
                         income: 0,
                         expense: 0
@@ -105,7 +105,7 @@ module.exports = {
                             amount[val.type] += val.nominal;
                         }
                     })
-    
+
                     return res.status(200).send({
                         success: true,
                         ...amount
